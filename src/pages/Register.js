@@ -1,32 +1,3 @@
-// import React, { useState } from 'react';
-// import API from '../api/api';
-// import { useNavigate } from 'react-router-dom';
-
-// export default function Register() {
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   const navigate = useNavigate();
-
-//   const handleRegister = async () => {
-//     try {
-//       await API.post('/auth/register', { email, password });
-//       alert("Registered successfully. Please login.");
-//       navigate('/login');
-//     } catch (err) {
-//       alert("Email already exists");
-//     }
-//   };
-
-//   return (
-//     <div className="p-8">
-//       <h2 className="text-xl font-semibold mb-4">Register</h2>
-//       <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="input" />
-//       <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" />
-//       <button onClick={handleRegister} className="btn">Register</button>
-//     </div>
-//   );
-// }
-
 
 
 import React, { useState } from "react";
