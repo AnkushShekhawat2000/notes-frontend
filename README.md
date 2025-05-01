@@ -78,8 +78,11 @@ src/
 
 ```bash
 # Clone the repository
+frontend--> 
 git clone https://github.com/AnkushShekhawat2000/notes-App
-cd notes-dashboard
+
+
+Backend --> git clone https://github.com/AnkushShekhawat2000/notes-App
 
 # Install dependencies
 npm install
