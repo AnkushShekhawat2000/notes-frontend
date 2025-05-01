@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# 📝 Authenticated Notes Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully responsive and modern **Notes Dashboard** with user authentication, note management features, dark/light theme support, and drag-and-drop functionality.
 
-## Available Scripts
+## 🚀 Live Demo
+link -  https://startling-blini-71d4fe.netlify.app/
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🔐 User Authentication (Email/Password & Google OAuth)
+- 🗒️ Add, Edit, Delete Notes
+- 🧲 Drag & Drop to reorder notes
+- 🌗 Dark & Light Theme Toggle
+- 🎨 Responsive UI with Tailwind CSS
+- ⚡ Smooth Animations via Framer Motion
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📁 File Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+src/
+├── api/
+│   └── api.js               # Axios instance for API requests
+├── components/
+│   └── ProtectedRoute.jsx   # Route protection for authenticated pages
+├── hooks/
+│   └── useTheme.js          # Custom hook for toggling themes
+├── pages/
+│   ├── Login.jsx            # Login page
+│   ├── Signup.jsx           # Signup page
+│   └── Dashboard.jsx        # Main notes dashboard
+├── App.jsx                  # Route definitions
+├── main.jsx                 # App entry point
+└── index.css                # Tailwind + global styles
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔐 Authentication Flow
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Firebase Authentication is used (Email & Google OAuth).
+- `localStorage` stores the user token after login.
+- Protected routes block unauthenticated access.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🎨 Theme Support
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Dark/light theme is implemented using Tailwind’s `dark:` classes.
+- `useTheme` hook toggles the mode.
+- Persisted via `localStorage` and applied to `<html>` tag.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧲 Drag and Drop
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Implemented with `@hello-pangea/dnd`.
+- Notes can be dragged to reorder.
+- Order is updated in local state and can optionally be saved in backend.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🛠️ Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Frontend**: React.js, Tailwind CSS, Framer Motion, Lucide React
+- **Authentication**: Firebase Auth
+- **State Management**: useState, useEffect, Context API
+- **Routing**: React Router
+- **Drag & Drop**: `@hello-pangea/dnd`
+- **Icons**: `lucide-react`, `react-icons`
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📦 Installation & Setup
 
-### Analyzing the Bundle Size
+```bash
+# Clone the repository
+git clone https://github.com/AnkushShekhawat2000/notes-App
+cd notes-dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Install dependencies
+npm install
 
-### Making a Progressive Web App
+# Create .env file and add Firebase credentials
+cp .env.example .env
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Start the app
+npm start
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📸 Screenshots
 
-### Deployment
+> Add some screenshots of your login page, dashboard, dark mode, and drag-drop notes here.
+![alt text](/screenshots/image-1.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Error show
+![alt text](/screenshots/image.png)
 
-### `npm run build` fails to minify
+---Singup page 
+![alt text](/screenshots/image-1.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+dashboard page
+![alt text](/screenshots/image-2.png)
+
+Dark Theme
+![alt text](/screenshots/image-3.png)
+
+## 🤔 Design Decisions
+
+- Tailwind enables a clean, utility-first responsive UI.
+- Drag-drop via `@hello-pangea/dnd` ensures smooth reordering.
+- Framer Motion brings modern, lightweight animation to enhance UX.
+
+---
